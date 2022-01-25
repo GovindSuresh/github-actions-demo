@@ -17,4 +17,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install black
       - name: Run black on diffed files only
-        run: git diff --name-only "origin/$GITHUB_BASE_REF" "origin/$GITHUB_HEAD_REF" | grep "*.py" | xargs black --check --verbose
+        run: git diff --name-only "origin/$GITHUB_BASE_REF" "origin/$GITHUB_HEAD_REF" | grep -e "*.py" | xargs black --check --verbose
