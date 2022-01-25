@@ -18,6 +18,6 @@ jobs:
           pip install black
       - name: Run black on diffed files only
         run: |
-        git diff --name-only "origin/$GITHUB_BASE_REF" "origin/$GITHUB_HEAD_REF" | grep -e "*.py" > blha.txt
-        head -10 blha.txt
+          git diff --name-only "origin/$GITHUB_BASE_REF" "origin/$GITHUB_HEAD_REF" | grep -e "*.py" > blha.txt
+          head -10 blha.txt
       # xargs black --check --verbose
