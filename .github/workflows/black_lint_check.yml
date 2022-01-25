@@ -10,5 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run black on diffed files only 
-        run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" | xargs black --check --verbose
+      - name: Run black on diffed files only
+        run: echo $GITHUB_BASE_REF
+        run: echo $GITHUB_HEAD_REF 
+        #run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" | xargs black --check --verbose
