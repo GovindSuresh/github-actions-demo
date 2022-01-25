@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run black on diffed files only 
-      - run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" | xargs black --check --verbose
+        run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" | xargs black --check --verbose
