@@ -15,5 +15,5 @@ jobs:
       - name: Run black on diffed files only
         #run: echo $GITHUB_BASE_REF
         #run: echo $GITHUB_HEAD_REF 
-        run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" 
+        run: git diff --name-only "origin/$GITHUB_BASE_REF" $GITHUB_HEAD_REF | grep "*.py" 
         #xargs black --check --verbose
