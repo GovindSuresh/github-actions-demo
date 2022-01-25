@@ -10,8 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "./test_code/"
-          version: "21.5b1"
+      - name: Run black on diffed files only 
+      - run: git diff --name-only $GITHUB_BASE_REF $GITHUB_HEAD_REF | grep "*.py" | xargs black --check --verbose
